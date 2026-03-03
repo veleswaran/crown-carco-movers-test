@@ -140,7 +140,6 @@ export default function CargoEnquiry() {
               onSubmit={handleCargoRequestSubmit}
               name="cargo-quote"
               method="POST"
-              data-netlify="true"
             >
               <input type="hidden" name="form-name" value="cargo-quote" />
               <input type="hidden" name="originCountry" value={originCountry} />
@@ -293,7 +292,6 @@ export default function CargoEnquiry() {
               onSubmit={handleEnquirySubmit}
               name="cargo-enquiry"
               method="POST"
-              data-netlify="true"
             >
               <input type="hidden" name="form-name" value="cargo-enquiry" />
               <input type="hidden" name="country" value={originCountry} />

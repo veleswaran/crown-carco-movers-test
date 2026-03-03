@@ -117,7 +117,6 @@ export const ContactSection: React.FC = () => {
                 <form
                   name="contact"
                   method="POST"
-                  data-netlify="true"
                   className="space-y-6 relative z-10"
                   onSubmit={handleSubmit}
                 >
@@ -146,6 +145,6 @@ export const ContactSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
