@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="810" height="540" viewBox="0 0 810 540">
+  <rect width="810" height="540" fill="#003399"/>
+  <g transform="translate(405,270)">
+    <g id="star">
+      <path d="M0,-30 L8,-10 L30,-10 L13,4 L19,25 L0,12 L-19,25 L-13,4 L-30,-10 L-8,-10 Z" fill="#ffcc00"/>
+    </g>
+    <use xlink:href="#star" transform="translate(0,-180)"/>
+    <use xlink:href="#star" transform="translate(90,-155.9)"/>
+    <use xlink:href="#star" transform="translate(155.9,-90)"/>
+    <use xlink:href="#star" transform="translate(180,0)"/>
+    <use xlink:href="#star" transform="translate(155.9,90)"/>
+    <use xlink:href="#star" transform="translate(90,155.9)"/>
+    <use xlink:href="#star" transform="translate(0,180)"/>
+    <use xlink:href="#star" transform="translate(-90,155.9)"/>
+    <use xlink:href="#star" transform="translate(-155.9,90)"/>
+    <use xlink:href="#star" transform="translate(-180,0)"/>
+    <use xlink:href="#star" transform="translate(-155.9,-90)"/>
+    <use xlink:href="#star" transform="translate(-90,-155.9)"/>
+  </g>
+</svg>
