@@ -30,10 +30,11 @@ export default function CargoEnquiry() {
     formData.set('destinationCountry', destinationCountry);
 
     try {
-      const response = await fetch("/", {
+      const data = Object.fromEntries(formData);
+      const response = await fetch("/.netlify/functions/send-email", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, formName: "cargo-quote" }),
       });
 
       if (response.ok) {
@@ -64,10 +65,11 @@ export default function CargoEnquiry() {
     formData.set('country', originCountry);
 
     try {
-      const response = await fetch("/", {
+      const data = Object.fromEntries(formData);
+      const response = await fetch("/.netlify/functions/send-email", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, formName: "cargo-enquiry" }),
       });
 
       if (response.ok) {

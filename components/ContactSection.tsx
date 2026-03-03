@@ -11,15 +11,18 @@ export const ContactSection: React.FC = () => {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("/", {
+      const data = Object.fromEntries(formData);
+      const response = await fetch("/.netlify/functions/send-email", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, formName: "contact" }),
       });
 
       if (response.ok) {
         setSubmitted(true);
         form.reset();
+      } else {
+        console.error("Failed to send email:", await response.text());
       }
     } catch (err) {
       console.error(err);
@@ -129,6 +132,10 @@ export const ContactSection: React.FC = () => {
                     <div className="space-y-2">
                       <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Phone Number</label>
                       <input name="phoneNumber" type="text" placeholder="+1 XXX XXX XXXX" className="w-full bg-white border border-slate-200 focus:border-gold-500 focus:ring-4 focus:ring-gold-500/10 rounded-2xl px-6 py-4 outline-none transition-all font-medium" required />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Email Address</label>
+                      <input name="email" type="email" placeholder="email@example.com" className="w-full bg-white border border-slate-200 focus:border-gold-500 focus:ring-4 focus:ring-gold-500/10 rounded-2xl px-6 py-4 outline-none transition-all font-medium" required />
                     </div>
                   </div>
                   <div className="space-y-2">
